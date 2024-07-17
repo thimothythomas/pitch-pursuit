@@ -1,0 +1,44 @@
+# Node modules
+node_modules
+
+.angular
+# Compiled output
+/dist/
+/tmp/
+*.js
+*.js.map
+*.css
+*.css.map
+*.ngfactory.ts
+*.ngstyle.ts
+
+# Dependencies
+*.module.ts
+*.ngfactory.ts
+*.ngstyle.ts
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Visual Studio Code
+.vscode/
+
+# IDE files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Mac files
+.DS_Store

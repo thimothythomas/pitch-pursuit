@@ -1,0 +1,26 @@
+<section class="parallax-banner">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 p-0">
+          <div class="fallback-image full-banner" [ngStyle]="{'background-image': 'url(assets/images/football/pitch-4.jpg)'}">
+            <!-- Use the <video> element with multiple sources for cross-browser compatibility -->
+            <video class="full-banner-video" autoplay muted loop playsinline [ngStyle]="{'width': '100%', 'height': '100%', 'object-fit': 'cover'}">
+              <source src="assets/images/football/dribbling.mp4" type="video/mp4">
+              <!-- Add more <source> elements for additional video formats (e.g., WebM, Ogg) -->
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+        <div class="container">
+          <div class="banner-contain">
+            <div>
+              <h2 class="title">Book Your Turf Now</h2>
+              <p class="description">Discover top-notch football turfs on Pitch Pursuit. Secure your spot and experience the excitement of the game.</p>
+              <a class="btn btn-default primary-btn radius-0 mt-3" href="#">Explore Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

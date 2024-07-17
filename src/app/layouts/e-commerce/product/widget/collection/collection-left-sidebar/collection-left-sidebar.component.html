@@ -1,0 +1,101 @@
+<div class="agency">
+  <app-ecommerce-header></app-ecommerce-header>
+  <!-- breadcrumb section start -->
+  <section class="breadcrumb-section-main inner-2 breadcrumb-section-sm">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="breadcrumb-contain ">
+            <div>
+              <h2 class="breadcrumb-txt">Booked Turf Details</h2>
+            </div>
+            <div>
+              <ul>
+
+                <li><a href="#">Admin</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i>Turf Details</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--breadcrumb section end -->
+
+  <!-- section start -->
+  <section class="section-b-space">
+    <div class="collection-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 collection-filter" [class.filterBar]="productsService.filterBar">
+            <div class="coll_sidebar_sticky">
+              <div class="collection-filter-block">
+                <h4> Filter by Date</h4>
+                <div class="date-picker">
+                  <ngb-datepicker [(ngModel)]="selectedDate" (dateSelect)="filterDateSelected($event)"></ngb-datepicker>
+                </div>
+                <div class="flex space-x-2">
+                  <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                    (click)="search()">Search</button>
+                  <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400"
+                    (click)="reset()">Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Collection Sidebar -->
+          <div class="collection-content col">
+            <!-- table -->
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+              <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" class="px-6 py-3">Image</th>
+                    <th scope="col" class="px-6 py-3">Date</th>
+                    <th scope="col" class="px-6 py-3">Start Time</th>
+                    <th scope="col" class="px-6 py-3">End Time</th>
+                    <th scope="col" class="px-6 py-3">Pitch</th>
+                    <th scope="col" class="px-6 py-3">Turf Name</th>
+                    <th scope="col" class="px-6 py-3">Price</th>
+                    <th scope="col" class="px-6 py-3">Organizer Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-container *ngIf="filteredTurfDetails.length > 0; else noData">
+                    <tr *ngFor="let detail of filteredTurfDetails"
+                      class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <td class="px-6 py-4">
+                        <img src="{{ detail.turfDetails.image }}" alt="{{ detail.turfDetails.name }}"
+                          class="w-16 md:w-32 max-w-full max-h-full">
+                      </td>
+                      <td class="px-6 py-4">{{ formatDate(detail.date) }}</td>
+                      <td class="px-6 py-4">{{ detail.startTime }}</td>
+                      <td class="px-6 py-4">{{ detail.endTime }}</td>
+                      <td class="px-6 py-4">{{ detail.pitch }}</td>
+                      <td class="px-6 py-4">{{ detail.turfDetails.name }}</td>
+                      <td class="px-6 py-4">{{ detail.turfDetails.price }}</td>
+                      <td class="px-6 py-4">{{ detail.user.name }}</td>
+                    </tr>
+                  </ng-container>
+                  <ng-template #noData>
+                    <tr>
+                      <td colspan="8" class="text-center py-8 text-gray-500 dark:text-gray-400">
+                        No booked events found on the selected date.
+                      </td>
+                    </tr>
+                  </ng-template>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section End -->
+
+  <app-ecommerce-footer></app-ecommerce-footer>
+</div>

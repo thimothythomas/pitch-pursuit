@@ -1,0 +1,71 @@
+<section class="relative w-full h-full py-40 min-h-screen">
+	<!-- <div class="absolute top-0 w-full h-full background-section bg-no-repeat bg-full"
+		style="background-image: url('assets/images/football/pitch-4.jpg');">
+	</div> -->
+	<div class="absolute top-0 w-full h-full background-section bg-no-repeat bg-full">
+		<video autoplay muted loop playsinline class="w-full h-full object-cover">
+			<source src="assets/images/football/champions-league.mp4" type="video/mp4">
+			<!-- Add more <source> elements for additional video formats (e.g., WebM, Ogg) -->
+			Your browser does not support the video tag.
+		</video>
+	</div>
+
+	<div class="container mx-auto px-4 h-full">
+		<div class="flex content-center items-center justify-center h-full">
+			<div class="w-full lg:w-4/12 px-4">
+				<div
+					class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg sign-in-section bg-opacity-100 border-0">
+					<div class="rounded-t mb-0 px-6 py-6">
+						<div class="text-center mb-3">
+							<h6 class="text-blueGray-500 text-sm font-bold">Sign in with</h6>
+						</div>
+						<div class="btn-wrapper text-center"><button type="button"
+								class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"><img
+									alt="..." src="assets/images/img/github.svg" class="w-5 mr-1"> Github </button><button type="button"
+								class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"><img
+									alt="..." src="assets/images/img/google.svg" class="w-5 mr-1"> Google </button></div>
+						<hr class="mt-6 border-b-1 border-blueGray-300">
+					</div>
+					<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+						<div class="text-blueGray-400 text-center mb-3 font-bold"><small>Or sign in with credentials</small></div>
+
+
+						<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+							<div class="relative w-full mb-3"><label htmlfor="grid-password"
+									class="block uppercase text-blueGray-600 text-xs font-bold mb-2"> Email </label><input type="email"
+									placeholder="Email" formControlName="email"
+									class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+								<div *ngIf="formControls.email.invalid && formControls.email.touched" class="text-red-500 text-xs mt-1">
+									Email is required and must be a valid email address
+								</div>
+							</div>
+							<div class="relative w-full mb-3"><label htmlfor="grid-password"
+									class="block uppercase text-blueGray-600 text-xs font-bold mb-2"> Password </label><input
+									type="password" placeholder="Password" formControlName="password"
+									class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+								<div *ngIf="formControls.password.invalid && formControls.password.touched"
+									class="text-red-500 text-xs mt-1">
+									Password is required
+								</div>
+							</div>
+							<div><label class="inline-flex items-center cursor-pointer"><input id="customCheckLogin" type="checkbox"
+										class="form-checkbox border-0 text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150 rounded"><span
+										class="ml-2 text-sm font-semibold text-blueGray-600"> Remember me </span></label></div>
+							<div class="text-center mt-6"><button
+									class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150">
+									Sign In </button></div>
+						</form>
+
+
+					</div>
+				</div>
+				<div class="flex flex-wrap mt-6 relative">
+					<div class="w-1/2"><a href="javascript:void(0)" class="text-blueGray-200"><small>Forgot
+								password?</small></a></div>
+					<div class="w-1/2 text-right"><a class="text-blueGray-200" href="/auth/register"><small>Create
+								new account</small></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
